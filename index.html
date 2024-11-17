@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Event Space</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-link">Home</a>
+        </div>
+        <h1 class="site-title">The Event Space</h1>
+        <div class="nav-right">
+            <a href="login.html" class="nav-link">Login</a>
+        </div>
+    </header>
+    
+   <!-- Search and Filter Section -->
+    <div class="search-filter-container">
+        <input type="text" id="search-input" placeholder="Search events...">
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button data-filter="all">All Events</button>
+            <button data-filter="today">Today</button>
+            <button data-filter="tomorrow">Tomorrow</button>
+            <button data-filter="this-week">This Week</button>
+            <button data-filter="this-weekend">This Weekend</button>
+            <button data-filter="this-month">This Month</button>
+        </div>
+    </div>
+
+
+    <div id="events-container" class="event-list"></div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
