@@ -1,10 +1,9 @@
-import eventsData from './events.js';
+import eventsData from './events.js'; 
 
 document.addEventListener("DOMContentLoaded", function () {
     let currentFilterType = ""; // Start with no filter (all events displayed)
     let allEvents = []; // This will store the combined list of events
 
-    
 
     function loadEvents() {
         const storedEvents = JSON.parse(localStorage.getItem("events")) || [];
@@ -16,22 +15,29 @@ document.addEventListener("DOMContentLoaded", function () {
         const eventsContainer = document.getElementById("events-container");
         eventsContainer.innerHTML = ""; // Clear existing content
 
-        events.forEach(event => {
+        events.forEach((event, index) => {
             const card = document.createElement("div");
             card.className = "event-card";
             card.innerHTML = `
-                <img src="${event.img}">
+                <img src="${event.image}">
                 <h3>${event.title}</h3>
-                <p>${event.description}</p>
-                <p><img src="cal.png">&ensp; ${event.date}</p>
-                <p><img src="loc.png">&ensp; ${event.location}</p>
+                <p><img src="/img/cal.png">&ensp; ${event.date}</p>
+                <p><img src="/img/loc.png">&ensp; ${event.location}</p>
             `;
+            card.addEventListener("click", function () {
+                navigateToDetailsPage(events[index]);
+            });
             eventsContainer.appendChild(card);
         });
     }
 
-    //localStorage.clear();
+    // localStorage.clear();
     loadEvents(); // Load and display events on page load
+
+    function navigateToDetailsPage(event) {
+        sessionStorage.setItem("selectedEvent", JSON.stringify(event));
+        window.location.href = "/html/event-details.html"; // Navigate to the details page
+    }
 
     // Search and filter functionality
     const searchInput = document.getElementById("search-input");
@@ -86,7 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function filterEvents(searchText = "", filterType = "") {
         const filteredEvents = allEvents.filter(event => {
             const titleMatch = event.title.toLowerCase().includes(searchText.toLowerCase());
-            const descriptionMatch = event.description.toLowerCase().includes(searchText.toLowerCase());
             const locationMatch = event.location.toLowerCase().includes(searchText.toLowerCase());
             const dateMatch = event.date.toLowerCase().includes(searchText.toLowerCase());
 
@@ -99,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
             else if (filterType === "this-weekend") dateFilterMatch = isEventThisWeekend(eventDate);
             else if (filterType === "this-month") dateFilterMatch = isEventThisMonth(eventDate);
 
-            return (titleMatch || descriptionMatch || locationMatch || dateMatch) && dateFilterMatch;
+            return (titleMatch || locationMatch || dateMatch) && dateFilterMatch;
         });
 
         displayEvents(filteredEvents); // Display the filtered events

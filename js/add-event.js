@@ -7,12 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Capture form input values
             const title = document.getElementById("title").value;
+            const organiser = document.getElementById("organiser").value;
             const description = document.getElementById("description").value;
             const date = document.getElementById("date").value;
             const location = document.getElementById("location").value;
+            const cost = document.getElementById("cost").value;
+            const image = document.getElementById("image").value;
 
-            // Create a new event object
-            const newEvent = { title, description, date, location };
+            // Create a new event object with the image property
+            const newEvent = { title, organiser, description, date, location, cost, image };
 
             // Retrieve existing events from localStorage or initialize an empty array
             let events = JSON.parse(localStorage.getItem("events")) || [];

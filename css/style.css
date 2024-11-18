@@ -10,7 +10,7 @@
 }
 
 body {
-    background-image: url('l.jpg'), linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    background-image: url('/img/l.jpg'), linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
     background-blend-mode: overlay;
     background-size: cover;
     background-position: center;
@@ -43,8 +43,8 @@ body {
 }
 
 .event-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     justify-content: space-between;
 }
@@ -79,10 +79,11 @@ body {
     transform: scale(1.02);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
     background: linear-gradient(45deg, #6d28d950, #b5179e50);
+    cursor: pointer;
 }
 
 .event-card p img {
-    vertical-align: -3px;
+    vertical-align: -4px;
     width: 20px;
     height: 20px;
 }
@@ -91,8 +92,12 @@ body {
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 8px;
     width: 100%;
+    height: auto;
+    max-height: 180px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    object-fit: cover;
 }
 
 .navbar {
@@ -201,8 +206,8 @@ body {
     width: 75%;
     padding: 10px;
     font-size: 1em;
-    border: 1px solid #444;
-    border-radius: 5px;
+    border: none;
+    border-radius: 8px;
     background-color: #3a3a3a;
     color: #e0e0e0;
 }
@@ -216,7 +221,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin: 20px;
+    margin: 20px 0;
     animation: fadeIn 0.5s ease;
 }
 
@@ -240,10 +245,112 @@ body {
     background: linear-gradient(45deg, #6d28d950, #b5179e50);
 }
 
+.eventDetails {
+    background: #2e2e2e7e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    display: block;
+    width: 75%;
+    backdrop-filter: blur(10px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.eventDetails h1 {
+    color: #d1d1d1;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.eventDetails p {
+    color: #a0a0a0;
+    margin: 5px 0;
+}
+
+.eventDetails a {
+    color: #a0a0a0;
+    text-decoration: none;
+}
+
+.eventDetails a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.eventDetails img {
+    vertical-align: -4px;
+    width: 20px;
+    height: 20px;
+}
+
+.eventDetails > img {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    margin-top: 18px;
+    object-fit: cover;
+}
+
+.keyDes {
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    margin: 30px;
+}
+
+.register {
+    cursor: pointer;
+    width: 75%;
+    padding: 6px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.register:hover {
+    background: linear-gradient(45deg, #6d28d950, #b5179e50);
+}
+
+.login-form a {
+    color: #a0a0a0;
+    text-decoration: none;
+}
+
+.login-form a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.login-form img {
+    vertical-align: -4px;
+    width: 20px;
+    height: 20px;
+}
 
 
 @media (max-width: 600px) {
     .event-list {
+        flex-direction: column;
+    }
+    .eventDetails {
+        width: 100%;
+    }
+    .filter-buttons {
         flex-direction: column;
     }
 }
