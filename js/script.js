@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
             card.innerHTML = `
                 <img src="${event.image}">
                 <h3>${event.title}</h3>
-                <p><img src="../img/cal.png">&ensp; ${event.date}</p>
-                <p><img src="../img/loc.png">&ensp; ${event.location}</p>
+                <p><img src="./img/cal.png">&ensp; ${event.date}</p>
+                <p><img src="./img/loc.png">&ensp; ${event.location}</p>
             `;
             card.addEventListener("click", function () {
                 navigateToDetailsPage(events[index]);
