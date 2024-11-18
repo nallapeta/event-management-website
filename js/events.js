@@ -1,6 +1,6 @@
 const eventsData = [
     {
-        image: "/img/jazz.jpg",
+        image: "../img/jazz.jpg",
         title: "Jazz Under the Stars",
         description: "Immerse yourself in an unforgettable evening of live jazz music under the stars at our annual Jazz Under the Stars event. Held at the stunning Skyline Amphitheater, this outdoor concert brings together some of the best jazz musicians for a night filled with smooth melodies and captivating rhythms. The evening will feature a variety of performances, from classic jazz standards to contemporary interpretations, set against the backdrop of a breathtaking night sky. Whether you're a long-time jazz enthusiast or new to the genre, this event promises to offer something for everyone. Enjoy delicious food from local vendors, sip on handcrafted cocktails, and relax as the music fills the air. This is the perfect event for a romantic date night, a group of friends, or anyone looking to unwind and enjoy the magic of live music in an incredible setting.",
         date: "2024-12-02",
