@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const eventDetailsSection = document.getElementById("event-details");
         eventDetailsSection.className = "eventDetails";
         eventDetailsSection.innerHTML = `
-            <a href="/index.html"><img src="../img/back.png">&nbsp;Go Back</a>
+            <a href="./index.html"><img src="../img/back.png">&nbsp;Go Back</a>
             <img src="${selectedEvent.image}">
             <h1>${selectedEvent.title}</h1>
             <div class="keyDes">
