@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (userType === "organizer") {
                     window.location.href = "add-event.html"; 
                 } else {
-                    window.location.href = "/index.html";
+                    window.location.href = "../index.html";
                 }
             } else {
                 message.textContent = "Invalid username or password.";
