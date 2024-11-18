@@ -343,6 +343,13 @@ body {
 }
 
 
+@media (max-width: 1200px) {
+    .keyDes {
+        gap: 40px;
+        margin: 30px 0;
+    }
+}
+
 @media (max-width: 600px) {
     .event-list {
         flex-direction: column;
@@ -352,5 +359,9 @@ body {
     }
     .filter-buttons {
         flex-direction: column;
+    }
+    .keyDes {
+        gap: 10px;
+        margin: 30px 0;
     }
 }
