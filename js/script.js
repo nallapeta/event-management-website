@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function navigateToDetailsPage(event) {
         sessionStorage.setItem("selectedEvent", JSON.stringify(event));
-        window.location.href = "/html/event-details.html"; // Navigate to the details page
+        window.location.href = "html/event-details.html"; // Navigate to the details page
     }
 
     // Search and filter functionality
