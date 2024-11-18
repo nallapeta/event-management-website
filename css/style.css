@@ -342,6 +342,11 @@ body {
     height: 20px;
 }
 
+.login-form p {
+    color: #a0a0a0;
+    font-size: 14px ;
+}
+
 
 @media (max-width: 1200px) {
     .keyDes {
@@ -363,5 +368,9 @@ body {
     .keyDes {
         gap: 10px;
         margin: 30px 0;
+    }
+    .filter-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
